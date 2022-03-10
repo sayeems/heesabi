@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "credits",
+  "info": {
+    "name": "credit",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "source": {
+      "type": "string",
+      "required": true
+    },
+    "amount": {
+      "required": true,
+      "type": "decimal"
+    },
+    "remarks": {
+      "type": "string"
+    },
+    "account": {
+      "model": "account",
+      "via": "credits"
+    },
+    "author": {
+      "type": "integer"
+    }
+  }
+}

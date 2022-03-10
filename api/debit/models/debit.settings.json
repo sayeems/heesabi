@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "debits",
+  "info": {
+    "name": "debit",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "purpose": {
+      "type": "string",
+      "required": true
+    },
+    "amount": {
+      "type": "integer",
+      "required": true
+    },
+    "account": {
+      "model": "account",
+      "via": "debits"
+    },
+    "remark": {
+      "type": "string"
+    },
+    "author": {
+      "type": "integer"
+    }
+  }
+}

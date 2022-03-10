@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lists",
+  "info": {
+    "name": "List",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "deadline": {
+      "type": "date",
+      "required": true
+    },
+    "complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "account": {
+      "model": "account",
+      "via": "lists"
+    },
+    "items": {
+      "via": "list",
+      "collection": "item"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "author": {
+      "type": "integer"
+    }
+  }
+}

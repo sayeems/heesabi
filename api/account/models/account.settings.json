@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "name": "Account",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false,
+    "populateCreatorFields": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "balance": {
+      "type": "decimal",
+      "required": true
+    },
+    "owner": {
+      "type": "integer",
+      "required": true
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "lists": {
+      "via": "account",
+      "collection": "list"
+    },
+    "debits": {
+      "via": "account",
+      "collection": "debit"
+    },
+    "credits": {
+      "via": "account",
+      "collection": "credit"
+    }
+  }
+}

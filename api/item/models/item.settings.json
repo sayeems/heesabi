@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "name": "Item",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "decimal"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "piece",
+        "kg",
+        "liter",
+        "foot"
+      ],
+      "default": "piece"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "remarks": {
+      "type": "string"
+    },
+    "complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "list": {
+      "via": "items",
+      "model": "list"
+    },
+    "author": {
+      "type": "integer"
+    }
+  }
+}
